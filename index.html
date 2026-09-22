@@ -112,6 +112,32 @@ footer{padding:40px 0;border-top:1px solid rgba(255,255,255,.09);text-align:cent
 @media(max-width:850px){.moments-heading{align-items:start;flex-direction:column}.video-topline small{display:none}.photo-strip{grid-template-columns:1fr}}
 @media(max-width:560px){.moments-quote{white-space:normal}.video-hero video{aspect-ratio:9/16;max-height:620px}.memory-card{grid-template-columns:120px 1fr}.memory-card figcaption{padding:15px}}
 
+
+/* Información oficial del torneo */
+.tournament-info{
+  display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;
+  margin:24px 0 8px
+}
+.info-highlight{
+  position:relative;overflow:hidden;padding:20px 22px;border-radius:20px;
+  background:linear-gradient(135deg,rgba(8,124,255,.18),rgba(25,201,130,.10));
+  border:1px solid rgba(66,215,255,.25);box-shadow:0 16px 42px rgba(0,0,0,.20)
+}
+.info-highlight::before{
+  content:"";position:absolute;left:0;top:0;bottom:0;width:5px;
+  background:linear-gradient(180deg,var(--blue),var(--cyan),var(--green))
+}
+.info-label{display:block;font-size:11px;font-weight:1000;letter-spacing:1.4px;color:var(--cyan);margin-bottom:7px}
+.info-value{font-size:24px;font-weight:1000;color:#fff;line-height:1.15}
+.info-detail{margin-top:7px;color:var(--muted);font-size:13px;line-height:1.5}
+.form-donation-note{
+  margin:16px 0;padding:14px 16px;border-radius:15px;
+  background:rgba(8,124,255,.10);border:1px solid rgba(66,215,255,.22);
+  color:#e8f5ff;font-size:13px;line-height:1.55
+}
+.form-donation-note strong{color:var(--cyan)}
+@media(max-width:700px){.tournament-info{grid-template-columns:1fr}.info-value{font-size:21px}}
+
 </style>
 </head>
 <body>
@@ -132,9 +158,26 @@ footer{padding:40px 0;border-top:1px solid rgba(255,255,255,.09);text-align:cent
 <div class="steps"><div class="card"><div class="step-icon">👕</div><h3>Forma tu equipo</h3><p>Elige un nombre que los represente y registra a tus jugadores.</p></div><div class="card"><div class="step-icon">⚽</div><h3>Vive la experiencia</h3><p>Comparte, compite y disfruta una jornada creada para unir a nuestra comunidad.</p></div><div class="card"><div class="step-icon">🏆</div><h3>Camina hacia la gloria</h3><p>Cuando cierren las inscripciones, llegará el sorteo y conoceremos los cruces del torneo.</p></div></div></div></section>
 
 <section id="inscripcion"><div class="container"><h2 class="title">Inscribe tu equipo</h2><p class="subtitle">Solo necesitas registrar un mínimo de 5 jugadores. Puedes agregar hasta 10.</p>
+<div class="tournament-info">
+  <div class="info-highlight">
+    <span class="info-label">DONACIÓN POR INSCRIPCIÓN</span>
+    <div class="info-value">Q50 por equipo</div>
+    <div class="info-detail">La donación es de Q50 por ficha/equipo inscrito. No es por jugador.</div>
+  </div>
+  <div class="info-highlight">
+    <span class="info-label">UBICACIÓN DEL TORNEO</span>
+    <div class="info-value">Iglesia Casa de Dios</div>
+    <div class="info-detail">El torneo se realizará en Iglesia Casa de Dios.</div>
+  </div>
+</div>
+
 <div class="form-grid"><div class="card"><form id="teamForm">
 <div class="row"><div><label>Nombre del equipo</label><input id="teamName" required maxlength="50" placeholder="Ej. Prueba Ing.Jero"></div><div><label>Responsable / capitán</label><input id="captain" required maxlength="60" placeholder="Nombre o apodo"></div></div>
 <div style="margin-top:20px"><label>Plantilla de jugadores</label><div class="player-tags"><span class="tag required-tag">JUGADORES 1–5 · OBLIGATORIOS</span><span class="tag optional-tag">JUGADORES 6–10 · OPCIONALES</span></div><p class="help">Puedes escribir el nombre, apellido o apodo de cada jugador.</p><div id="players" class="players"></div></div>
+
+<div class="form-donation-note">
+  <strong>Importante:</strong> la donación de inscripción es de <strong>Q50 por equipo</strong>, independientemente de si registras entre 5 y 10 jugadores. Lugar: <strong>Iglesia Casa de Dios</strong>.
+</div>
 <div class="actions"><button class="btn primary" type="submit">Inscribir equipo</button><button class="btn secondary" type="button" onclick="clearForm()">Limpiar</button></div><div id="formStatus" class="status"></div></form></div>
 <div class="card"><h3 style="margin-top:0">Equipos registrados</h3><div class="counter" id="teamCount">0</div><p class="help">equipos forman parte de El Camino a la Gloria.</p><div class="notice" style="margin-top:18px">Las inscripciones permanecen abiertas hasta que la organización decida cerrarlas. No mostramos un cupo fijo.</div></div></div></div></section>
 

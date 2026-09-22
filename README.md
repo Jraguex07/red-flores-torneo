@@ -19,3 +19,7 @@ El formulario exige de 5 a 10 jugadores.
 Las inscripciones ya son compartidas mediante Supabase.
 El resultado del sorteo de esta versión todavía se guarda en el navegador del administrador.
 La siguiente mejora recomendada es guardar también el sorteo y el estado de inscripciones en Supabase con autenticación administrativa.
+
+## Información del torneo
+- Donación de inscripción: Q50 por ficha/equipo (no por jugador).
+- Ubicación: Iglesia Casa de Dios.
